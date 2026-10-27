@@ -18,7 +18,7 @@ public class Main {
     static final int HORA_CIERRE = 22;
 
     static final DateTimeFormatter FORMATO_FECHA_HORA =
-            DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
 
     static final String CARRO = "Carro";
     static final String MOTO = "Moto";
@@ -29,4 +29,8 @@ public class Main {
     static int celdasOcupadas = 0;
     static long recaudoCarros = 0;
     static long recaudoMotos = 0;
+
+    public static void main(String[] args) {
+
+    }
 }
