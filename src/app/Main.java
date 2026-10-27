@@ -18,7 +18,7 @@ public class Main {
     static final int HORA_CIERRE = 22;
 
     static final DateTimeFormatter FORMATO_FECHA_HORA =
-            DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     static final String CARRO = "Carro";
     static final String MOTO = "Moto";
@@ -32,5 +32,47 @@ public class Main {
 
     public static void main(String[] args) {
 
+        inicializarArreglos();
+        int opcion;
+
+        do {
+            mostrarMenu();
+
+            opcion = SCANNER.nextInt();
+            SCANNER.nextLine();
+            switch (opcion) {
+                case 1 -> imprimir("Ingreso: pendiente");
+                case 2 -> imprimir("Salida: pendiente");
+                case 3 -> imprimir("Ocupacion: pendiente");
+                case 4 -> imprimir("Financiero: pendiente");
+                case 5 -> imprimir("Gracias por usar nuestro sistema.");
+                default -> imprimir("Opcion no valida");
+            }
+        }while (opcion !=5);
+
+        SCANNER.close();
+    }
+
+    static void imprimir(String mensaje) {
+        System.out.println(mensaje);
+    }
+
+    static void inicializarArreglos() {
+        for (int i = 0; i < CAPACIDAD_TOTAL; i++) {
+            tiposVehiculo[i] = null;
+            fechasIngreso[i] = null;
+        }
+    }
+
+    static void mostrarMenu() {
+        imprimir("");
+        imprimir("Menu de registro.");
+        imprimir("====================");
+        imprimir("1. Registrar entrada");
+        imprimir("2. Registrar salida");
+        imprimir("3. Reporte de ocupacion");
+        imprimir("4. Reporte financiero");
+        imprimir("5. Salir");
+        System.out.print("Escoja una opcion: ");
     }
 }
